@@ -11,6 +11,6 @@
   ],
   "ui": "ui.html",
   "networkAccess": {
-    "allowedDomains": ["http://www.w3.org"]
+    "allowedDomains": ["https://fonts.googleapis.com", "https://fonts.gstatic.com"]
   }
 }
