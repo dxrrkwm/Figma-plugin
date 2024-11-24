@@ -17,11 +17,10 @@ figma.ui.onmessage = (msg) => {
       figma.notify('dolboeb tut X');
       return;
     }
-
+      
     selectedFrames.forEach((frame, index) => {
       frame.name = template.replace("X", (index + 1).toString());
     });
-
     figma.closePlugin();
   }
 };
