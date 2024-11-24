@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href='https://fonts.googleapis.com/css?family=Inter'>
+  <link rel="icon" type="img/x-icon" href="">
+</head>
+<body>
+
+  <div class="navbar">
+    <div class="navbar-item active">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAZCAYAAAArK+5dAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAFQSURBVHgB3VXRUYRADA03FEAH0oFnB3SgViB2YAl0oFZwlnBWIFagVnBYwdEBvjeTG3OZ3T0E+bk38wbIJptNsiQiCyOLLQzDsMZjrZ+lxNGRWZa1oxxg4wqPja61ZpMYSuUFeB9zdNi8BPfq5E9gxOBOI48qvYC1TARsG3CTUvhInuC0A2ZgZ2W50ynF5Fud3UgcW+T803z3YGEVVs6ggEEvE6G2RVQBJx5kJvweK1kYeWoxUAOf85NYPIIjzK0BzIula1B7QS4zwB/LfN79mwPd+E2Om+UWvFV51HBUDaD2BD4G5BXbjZVNrcEl+BqQ1+C7FfgU9bwJI9rFt7ghpGm7Bq+s3EfAnyjV3A7gcOnc5sz9Mw7XRa00h3t3O7zOg23JasNB04T0QyOTEbCAjObLLTP3XOeN6fWdOs3omaxO2HIr+R36IXRgm0zJWeAH4Q+5w5r0UJMAAAAASUVORK5CYII=" alt="nahuy poshel 1" />
+      Doc Renaming
+    </div>
+    <div class="navbar-item">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAE/SURBVHgB7VTRccIwDJVzHSCdAG9QugEbNCNkhG4AnaDdoNkAmICwAUyQMAFhAvME8p3PwU6O8MEB7+6dE+lJcmRHRI8CdclojMmxfIFjMWkKowYbWZdKqSJaBMk1ljl4AFlcnkRK1aEKEpPKhjLwA/xETBMKKMAZDQDi/8B5yJmCexoIm4dXa3tz/Py520tBdD4T9qdCewYN2lK6em4TYjZ4nIALtiWOnxNVXoGp2AoJYs1U1hzk1hjRudjJZlo7nvnnIQm0b/Petd9mP1dCcSxjN4sh/nVMk3QkyKgHunRdX3ITvIrcd5EaHIWEuPcTe/flP4jdKC35WkV4VLxHAu0f/EPdGLlF3J22Btu1iOaBYwX+0gDwHAP/YwKeQxWLuOfgmHpA4jLZZOXPu1BQDpZgbfqBdQvw+xbtfnIcAVuHBee0+fWyAAAAAElFTkSuQmCC" alt="nahuy poshel 2" />
+      Text Resize
+    </div>
+    <div class="navbar-item">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAZCAYAAAArK+5dAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAEXSURBVHgB7ZXhDYIwEIWvxgHYQJxAN9BRcAM3UCcwTqAbqBOAE6gTiBvoBPhevB/aFFog/jG85EsT7trrcY8g8mMZX0JRFGMsJFKoB8iJMeZSuwAOnWJZ6MFPkGko15WFYmWg8Q2KZRJw4y04gzmIAvIjkIAbWPuSmbiXhsLelBf7fNazcmJpJ84mqipATbXdRAKkr4h7Uu61433Hno28h8nXtZX3AHmzq5XH4dIEscaWrgKuDgRu2AEmr8AdHB1pJzADQ+aWOcjVgS16fScN5StwkJaqLOD7SkPkmsFImmsUUqCzqbcDW51Nv8RhtrVpXhpVy6VNbQoyO172y0ywkInUsKnLScZ3u49DYiucA86ILnvI3+oFhxOxdDMEzuEAAAAASUVORK5CYII=" alt="nahuy poshel 3" />
+      Sync Data
+    </div>
+  </div>
+  
+
+  <div class="container">
+    <input type="text" id="template" placeholder="Creative Name" class="input-field"/>
+    <button id="rename" class="rename-button">Rename</button>
+  </div>
+
+
+  <script>
+    document.getElementById("rename").onclick = () => {
+      const template = document.getElementById("template").value;
+
+      parent.postMessage(
+        {
+          pluginMessage: { type: "rename-frames", template },
+        },
+        "*"
+      );
+    };
+  </script>
+</body>
+
+
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #2c2c2c;
+    font-family: 'Inter';
+    color: #fff;
+    width: 400px;
+    height: 150px;
+  }
+
+  .navbar {
+      display: flex;
+      width: 430px;
+      align-items: center;
+      background-color: #333;
+    }
+
+    .navbar-item {
+      display: flex;
+      align-items: center;
+      color: #fff;
+      font-size: 14px;
+      font-family: 'Inter';
+      cursor: pointer;
+      padding: 10px 15px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .navbar-item.active {
+      background-color: #0c8ce9;
+      color: #fff;
+    }
+
+    .navbar-item:hover {
+      background-color: lightskyblue;
+    }
+
+    .navbar-item img {
+      margin-right: 8px;
+      width: 24px;
+      height: 24px;
+    }
+
+  .container {
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 15px;
+    width: 100%;
+    height: calc(100% - 60px);
+  }
+
+  .input-field {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #444;
+    border-radius: 10px;
+    font-size: 14px;
+    font-family: 'Inter';
+    background-color: #2c2c2c;
+    color: #fff;
+  }
+
+  .input-field:focus {
+    outline: none;
+  }
+
+  .rename-button {
+    width: 100%;
+    margin-top: 10px;
+    padding: 12px;
+    font-size: 14px;
+    font-family: 'Inter';
+    font-weight: 500;
+    color: #2c2c2c;
+    background-color: #757575;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  .rename-button:hover {
+    background-color: #E25544;
+    color: #fff;
+  }
+</style>
+</html>
+
+
