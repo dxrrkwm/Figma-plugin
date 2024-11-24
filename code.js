@@ -1,4 +1,4 @@
-figma.showUI(__html__, { width: 430, height: 180 });
+figma.showUI(__html__, { width: 480, height: 160 });
 
 figma.ui.onmessage = (msg) => {
   if (msg.type === "rename-frames") {
@@ -19,11 +19,9 @@ figma.ui.onmessage = (msg) => {
     }
 
     selectedFrames.forEach((frame, index) => {
-      const newName = template.replace("X", (index + 1).toString());
-      frame.name = newName;
+      frame.name = template.replace("X", (index + 1).toString());
     });
 
-    figma.notify("kayf");
     figma.closePlugin();
   }
 };
