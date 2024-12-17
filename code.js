@@ -21,6 +21,5 @@ figma.ui.onmessage = (msg) => {
     selectedFrames.forEach((frame, index) => {
       frame.name = template.replace("X", (index + 1).toString());
     });
-    figma.closePlugin();
   }
 };
