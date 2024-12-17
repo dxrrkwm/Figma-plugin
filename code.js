@@ -14,7 +14,7 @@ figma.ui.onmessage = (msg) => {
     const { template } = msg;
 
     if (!template.includes("X")) {
-      figma.notify('dolboeb tut X');
+      figma.notify('template must include "X"');
       return;
     }
       
